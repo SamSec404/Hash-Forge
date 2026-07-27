@@ -25,7 +25,7 @@ HashForge is a Flask-based web application for generating, verifying, comparing,
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/your-username/HashForge.git
+   git clone https://github.com/SamSec404/HashForge.git
    ```
 
 2. Navigate to the project directory
