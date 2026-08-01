@@ -1,0 +1,23 @@
+<div class="card">
+    <h2>Verify Hash</h2>
+
+    <form method="POST">
+        <input type="hidden" name="action" value="verify">
+
+        <textarea name="verify_text" placeholder="Original Text">{{ verify_text }}</textarea>
+
+        <textarea name="verify_hash" placeholder="Existing Hash">{{ verify_hash }}</textarea>
+
+        <button>
+            Verify
+        </button>
+    </form>
+            
+    {% if verify_result %}
+            
+    <div class="success-box">
+        {{ verify_result }}
+    </div>
+
+    {% endif %}
+</div>
