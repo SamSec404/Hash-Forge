@@ -1,0 +1,25 @@
+<div class="card">
+            <h2>File Hash Generator</h2>
+
+            <form method="POST" enctype="multipart/form-data">
+
+                <input type="hidden" name="action" value="file">
+                <input type="file" name="uploaded_file" required>
+
+                <label>Algorithm</label>
+
+                <select name="algorithm">
+                    {% for algorithm in algorithms %}
+
+                    <option value="{{ algorithm }}">
+                        {{ algorithm }}
+                    </option>
+
+                    {% endfor %}
+                </select>
+
+                <button>
+                    Generate File Hash
+                </button>
+            </form>
+        </div>
