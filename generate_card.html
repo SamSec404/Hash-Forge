@@ -1,0 +1,49 @@
+<div class="card">
+            <h2>Generate Hash</h2>
+
+            <form method="POST">
+                <input type="hidden" name="action" value="generate">
+
+                <label>Text</label>
+                <textarea id="inputText" name="input_text" placeholder="Enter text...">{{ input_text }}</textarea>
+
+                <p id="counter">
+                    Characters : 0 | Bytes : 0
+                </p>
+
+                <label>Algorithm</label>
+                <select name="algorithm">
+                    {% for algorithm in algorithms %}
+
+                    <option value="{{ algorithm }}" {% if algorithm==selected_algorithm %} selected {% endif %}>
+                        {{ algorithm }}
+                    </option>
+
+                    {% endfor %}
+                </select>
+
+                <button>
+                    Generate Hash
+                </button>
+            </form>
+
+            {% if generated_hash %}
+
+            <div class="result-card">
+                <h3>Generated Hash</h3>
+
+                <textarea id="generatedHash" readonly>{{ generated_hash }}</textarea>
+
+                <div class="button-group">
+                    <button type="button" onclick="copyHash()">
+                        Copy
+                    </button>
+
+                    <button type="button" onclick="clearGenerator()">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
