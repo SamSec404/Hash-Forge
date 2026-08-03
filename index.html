@@ -1,0 +1,177 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HashForge</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Generate Hash</h2>
+
+            <form method="POST">
+                <input type="hidden" name="action" value="generate">
+
+                <label>Text</label>
+                <textarea id="inputText" name="input_text" placeholder="Enter text...">{{ input_text }}</textarea>
+
+                <p id="counter">
+                    Characters : 0 | Bytes : 0
+                </p>
+
+                <label>Algorithm</label>
+                <select name="algorithm">
+                    {% for algorithm in algorithms %}
+
+                    <option value="{{ algorithm }}" {% if algorithm==selected_algorithm %} selected {% endif %}>
+                        {{ algorithm }}
+                    </option>
+
+                    {% endfor %}
+                </select>
+
+                <button>
+                    Generate Hash
+                </button>
+            </form>
+
+            {% if generated_hash %}
+
+            <div class="result-card">
+                <h3>Generated Hash</h3>
+
+                <textarea id="generatedHash" readonly>{{ generated_hash }}</textarea>
+
+                <div class="button-group">
+                    <button type="button" onclick="copyHash()">
+                        Copy
+                    </button>
+
+                    <button type="button" onclick="clearGenerator()">
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            {% endif %}
+        </div>
+
+<!-- File Hash Generator 
+        <div class="card">
+            <h2>File Hash Generator</h2>
+
+            <form method="POST" enctype="multipart/form-data">
+
+                <input type="hidden" name="action" value="file">
+                <input type="file" name="uploaded_file" required>
+
+                <label>Algorithm</label>
+
+                <select name="algorithm">
+                    {% for algorithm in algorithms %}
+
+                    <option value="{{ algorithm }}">
+                        {{ algorithm }}
+                    </option>
+
+                    {% endfor %}
+                </select>
+
+                <button>
+                    Generate File Hash
+                </button>
+            </form>
+        </div>
+
+<!-- verify hash 
+
+        <div class="card">
+            <h2>Verify Hash</h2>
+
+            <form method="POST">
+                <input type="hidden" name="action" value="verify">
+
+                <textarea name="verify_text" placeholder="Original Text">{{ verify_text }}</textarea>
+
+                <textarea name="verify_hash" placeholder="Existing Hash">{{ verify_hash }}</textarea>
+
+                <button>
+                    Verify
+                </button>
+
+            </form>
+            
+            {% if verify_result %}
+            
+            <div class="success-box">
+                {{ verify_result }}
+            </div>
+
+            {% endif %}
+        </div>
+
+
+<!-- Compare Hashes 
+
+        <div class="card">
+            <h2>Compare Hashes</h2>
+
+            <form method="POST">
+
+                <input type="hidden" name="action" value="compare">
+
+                <textarea name="hash_a" placeholder="Hash A">{{ hash_a }}</textarea>
+
+                <textarea name="hash_b" placeholder="Hash B">{{ hash_b }}</textarea>
+
+                <button>
+                    Compare
+                </button>
+            </form>
+
+            {% if compare_result %}
+
+            <div class="success-box">
+                {{ compare_result }}
+            </div>
+
+            {% endif %}
+        </div>
+    </div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html> -->
+
+
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+HashForge
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+{% include 'components/generate_card.html' %}
+
+{% include 'components/verify_card.html' %}
+
+{% include 'components/compare_card.html' %}
+
+{% include 'components/file_hash_card.html' %}
+
+{% include 'components/history_card.html' %}
+
+{% include 'components/algorithm_info_card.html' %}
+
+</div>
+
+{% endblock %}
