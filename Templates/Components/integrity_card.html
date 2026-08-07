@@ -1,0 +1,47 @@
+<div class="card">
+
+<h2>File Integrity Checker</h2>
+
+<form
+action="{{ url_for('integrity.check_integrity') }}"
+method="POST"
+enctype="multipart/form-data">
+
+<input
+type="file"
+name="uploaded_file"
+required>
+
+<select name="algorithm">
+
+{% for algorithm in algorithms %}
+
+<option value="{{ algorithm }}">
+
+{{ algorithm }}
+
+</option>
+
+{% endfor %}
+
+</select>
+
+<button>
+
+Verify Integrity
+
+</button>
+
+</form>
+
+{% if integrity_result %}
+
+<div class="success-box">
+
+{{ integrity_result }}
+
+</div>
+
+{% endif %}
+
+</div>
