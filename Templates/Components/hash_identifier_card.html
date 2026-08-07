@@ -1,0 +1,41 @@
+<div class="card">
+
+    <h2>Hash Identifier</h2>
+
+    <form
+        action="{{ url_for('identify.identify') }}"
+        method="POST">
+
+        <textarea
+            name="unknown_hash"
+            placeholder="Paste a hash here...">{{ unknown_hash }}</textarea>
+
+        <button>
+
+            Identify
+
+        </button>
+
+    </form>
+
+    {% if identified_hash %}
+
+    <div class="result-card">
+
+        <h3>
+
+            Likely Algorithm
+
+        </h3>
+
+        <p>
+
+            {{ identified_hash }}
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+</div>
