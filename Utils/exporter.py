@@ -3,29 +3,22 @@ import json
 
 
 def export_txt(history, filename):
-
     with open(filename, "w") as file:
-
         for item in history:
-
-            file.write(
+            file.write( 
                 f"""
-Type : {item['record_type']}
-Input : {item['original_input']}
-Algorithm : {item['algorithm']}
-Hash : {item['generated_hash']}
-Time : {item['timestamp']}
-
+                Type : {item['record_type']}
+                Input : {item['original_input']}
+                Algorithm : {item['algorithm']}
+                Hash : {item['generated_hash']}
+                Time : {item['timestamp']}
 ----------------------------------------
-
 """
             )
 
 
 def export_json(history, filename):
-
     with open(filename, "w") as file:
-
         json.dump(
             history,
             file,
@@ -34,12 +27,11 @@ def export_json(history, filename):
 
 
 def export_csv(history, filename):
-
     with open(
         filename,
         "w",
         newline=""
-    ) as file:
+    )as file:
 
         writer = csv.writer(file)
 
@@ -52,7 +44,6 @@ def export_csv(history, filename):
         ])
 
         for item in history:
-
             writer.writerow([
                 item["record_type"],
                 item["original_input"],
