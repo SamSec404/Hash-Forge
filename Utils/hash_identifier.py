@@ -1,4 +1,4 @@
-HASH_LENGTHS = {
+HASH_LENGTHS={
     32: "MD5",
     40: "SHA1",
     56: "SHA224",
@@ -9,12 +9,13 @@ HASH_LENGTHS = {
 
 
 def identify_hash(hash_value):
-
     hash_value = hash_value.strip()
 
-    length = len(hash_value)
+    length=len(hash_value)
 
     return HASH_LENGTHS.get(
         length,
         "Unknown"
     )
+
+
