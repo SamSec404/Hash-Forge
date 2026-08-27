@@ -1,6 +1,5 @@
 from datetime import datetime
 
-
 def create_report(
     algorithm,
     original_text,
@@ -12,35 +11,34 @@ def create_report(
     )
 
     report = f"""
-==============================
-
-HashForge Report
-
-==============================
-
-Date
-
-{timestamp}
-
-------------------------------
-
-Algorithm
-
-{algorithm}
-
-------------------------------
-
-Original Text
-
-{original_text}
-
-------------------------------
-
-Generated Hash
-
-{generated_hash}
-
-==============================
-"""
-
+        ==============================
+        
+        HashForge Report
+        
+        ==============================
+        
+        Date
+        {timestamp}
+        
+        ------------------------------
+        
+        Algorithm
+        {algorithm}
+        
+        ------------------------------
+        
+        Original Text
+        {original_text}
+        
+        ------------------------------
+        
+        Generated Hash
+        {generated_hash}
+        
+        ==============================
+        """
     return report
+
+
+
+
