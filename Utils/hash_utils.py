@@ -23,18 +23,18 @@ def generate_hash(text, algorithm):
 
 
 def generate_file_hash(file_path, algorithm):
-
     hash_object = SUPPORTED_ALGORITHMS[algorithm]()
 
     with open(file_path, "rb") as file:
-
         while True:
-
             chunk = file.read(4096)
 
             if not chunk:
                 break
 
             hash_object.update(chunk)
-
     return hash_object.hexdigest()
+
+
+
+
