@@ -11,18 +11,14 @@ HISTORY_FILE = os.path.join(
 
 
 def load_history():
-
     if not os.path.exists(HISTORY_FILE):
-
         return []
 
     with open(HISTORY_FILE, "r") as file:
-
         return json.load(file)
 
 
 def save_history(history):
-
     with open(HISTORY_FILE, "w") as file:
 
         json.dump(
@@ -33,11 +29,10 @@ def save_history(history):
 
 
 def add_history(entry):
-
     history = load_history()
-
     history.insert(0, entry)
-
     history = history[:20]
-
     save_history(history)
+
+
+
