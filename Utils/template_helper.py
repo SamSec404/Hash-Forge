@@ -4,7 +4,6 @@ from Utils.hash_utils import SUPPORTED_ALGORITHMS
 from Utils.history import load_history
 from Utils.statistics import get_statistic
 
-
 def render_home(**kwargs):
     context = {
         "algorithms": SUPPORTED_ALGORITHMS.keys(),
